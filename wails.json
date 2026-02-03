@@ -1,0 +1,21 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "Lumen",
+  "outputfilename": "Lumen",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "http://localhost:5173",
+  "debounceMS": 100,
+  "author": {
+    "name": "Lumen Team",
+    "email": "lumen@example.com"
+  },
+  "info": {
+    "companyName": "Lumen",
+    "productName": "Lumen",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright © 2026 Lumen Team",
+    "comments": "Torrent Streaming Application"
+  }
+}

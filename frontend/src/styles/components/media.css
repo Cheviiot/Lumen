@@ -1,0 +1,97 @@
+@layer components {
+  .media-poster {
+    @apply relative rounded-xl overflow-hidden 
+           bg-dark-900
+           shadow-lg
+           border border-dark-800
+           cursor-pointer;
+    width: 176px;
+    height: 264px;
+    transition: all 0.2s ease-out;
+  }
+  
+  .media-poster:hover {
+    @apply border-dark-700;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .media-poster img {
+    @apply w-full h-full object-cover 
+           transition-all duration-300;
+  }
+  
+  .media-backdrop {
+    @apply relative aspect-video rounded-xl overflow-hidden 
+           bg-dark-900
+           shadow-lg border border-dark-800;
+  }
+  
+  .media-backdrop img {
+    @apply w-full h-full object-cover
+           transition-all duration-300;
+  }
+  
+  .media-backdrop:hover img {
+    transform: scale(1.05);
+  }
+  
+  .media-backdrop::before {
+    content: '';
+    @apply absolute inset-0 
+           bg-gradient-to-t from-dark-950 via-dark-950/30 to-transparent
+           z-10;
+  }
+
+  .rating-badge {
+    @apply absolute top-3 right-3 px-3 py-1.5
+           bg-dark-950/90 backdrop-blur-md
+           border border-dark-800
+           rounded-lg text-sm font-semibold
+           flex items-center gap-1.5
+           shadow-lg z-30
+           transition-all duration-200;
+  }
+
+  .genre-tag {
+    @apply px-4 py-2
+           bg-dark-900/80
+           backdrop-blur-md
+           border border-dark-800 hover:border-dark-700
+           rounded-lg text-sm font-medium
+           text-dark-400 hover:text-white
+           shadow-sm
+           transition-all duration-200 cursor-pointer
+           hover:bg-dark-800;
+  }
+  
+  .media-title {
+    @apply text-2xl font-bold text-white line-clamp-2
+           transition-colors duration-200;
+  }
+  
+  .media-description {
+    @apply text-sm text-dark-400 line-clamp-3 leading-relaxed;
+  }
+  
+  .media-overlay {
+    @apply absolute inset-0 
+           bg-gradient-to-t from-dark-950 via-dark-950/90 to-transparent
+           flex flex-col justify-end p-6 z-20
+           opacity-0 hover:opacity-100
+           transition-opacity duration-300;
+  }
+  
+  .media-play-button {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+           w-16 h-16 rounded-full
+           bg-accent-600
+           border-2 border-white/20
+           flex items-center justify-center
+           opacity-0 group-hover:opacity-100 
+           scale-90 group-hover:scale-100
+           transition-all duration-200
+           shadow-lg z-30 cursor-pointer
+           hover:bg-accent-500;
+  }
+}

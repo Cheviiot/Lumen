@@ -1,0 +1,15 @@
+/* Импорты модулей (должны быть первыми) */
+@import './base.css';
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/forms.css';
+@import './components/sidebar.css';
+@import './components/media.css';
+@import './components/extras.css';
+@import './utilities/helpers.css';
+@import './utilities/animations.css';
+
+/* Tailwind CSS (после всех импортов) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,187 @@
+/* Модальные окна */
+@layer components {
+  .modal-overlay {
+    @apply fixed inset-0 bg-dark-950/80 backdrop-blur-sm z-50
+           flex items-center justify-center p-4
+           animate-fade-in;
+  }
+  
+  .modal-content {
+    @apply relative bg-gradient-to-br from-dark-900 to-dark-950
+           rounded-3xl shadow-2xl
+           border border-dark-800/50
+           max-w-4xl w-full max-h-[90vh] overflow-hidden
+           animate-scale-in;
+  }
+  
+  .modal-header {
+    @apply px-6 py-5 border-b border-dark-800/50
+           bg-gradient-to-r from-dark-850/50 to-transparent
+           flex items-center justify-between;
+  }
+  
+  .modal-body {
+    @apply px-6 py-5 overflow-y-auto max-h-[calc(90vh-140px)];
+  }
+  
+  .modal-footer {
+    @apply px-6 py-4 border-t border-dark-800/50
+           bg-gradient-to-r from-transparent to-dark-850/50
+           flex items-center justify-end gap-3;
+  }
+  
+  .modal-close {
+    @apply w-10 h-10 rounded-xl
+           bg-dark-800/50 hover:bg-dark-700
+           text-dark-400 hover:text-white
+           flex items-center justify-center
+           transition-all duration-300
+           hover:rotate-90 hover:scale-110;
+  }
+}
+
+/* Дропдауны */
+@layer components {
+  .dropdown {
+    @apply relative inline-block;
+  }
+  
+  .dropdown-menu {
+    @apply absolute right-0 mt-2 min-w-[200px]
+           bg-dark-900/95 backdrop-blur-xl
+           border border-dark-800/50
+           rounded-2xl shadow-2xl
+           py-2 z-50
+           animate-fade-in-down;
+  }
+  
+  .dropdown-item {
+    @apply px-4 py-3 flex items-center gap-3
+           text-dark-300 hover:text-white
+           hover:bg-dark-800/50
+           transition-all duration-200
+           cursor-pointer;
+  }
+  
+  .dropdown-divider {
+    @apply my-2 border-t border-dark-800/50;
+  }
+}
+
+/* Тосты/уведомления */
+@layer components {
+  .toast {
+    @apply fixed bottom-6 right-6 z-50
+           px-6 py-4 rounded-2xl
+           shadow-2xl backdrop-blur-xl
+           border flex items-center gap-4
+           animate-slide-in-right
+           max-w-md;
+  }
+  
+  .toast-success {
+    @apply toast bg-success/20 border-success/30 text-success;
+  }
+  
+  .toast-error {
+    @apply toast bg-error/20 border-error/30 text-error;
+  }
+  
+  .toast-warning {
+    @apply toast bg-warning/20 border-warning/30 text-warning;
+  }
+  
+  .toast-info {
+    @apply toast bg-info/20 border-info/30 text-info;
+  }
+}
+
+/* Скелетоны загрузки */
+@layer components {
+  .skeleton {
+    @apply bg-gradient-to-r from-dark-800 via-dark-700 to-dark-800
+           bg-[length:200%_100%]
+           animate-shimmer rounded-xl;
+  }
+  
+  .skeleton-text {
+    @apply skeleton h-4 w-full mb-2;
+  }
+  
+  .skeleton-title {
+    @apply skeleton h-8 w-3/4 mb-4;
+  }
+  
+  .skeleton-avatar {
+    @apply skeleton w-12 h-12 rounded-full;
+  }
+  
+  .skeleton-card {
+    @apply skeleton aspect-[2/3] w-full;
+  }
+}
+
+/* Бейджи */
+@layer components {
+  .badge {
+    @apply inline-flex items-center px-3 py-1
+           rounded-full text-xs font-semibold
+           transition-all duration-200;
+  }
+  
+  .badge-accent {
+    @apply badge bg-accent-600/20 text-accent-400
+           border border-accent-600/30;
+  }
+  
+  .badge-secondary {
+    @apply badge bg-secondary-600/20 text-secondary-400
+           border border-secondary-600/30;
+  }
+  
+  .badge-success {
+    @apply badge bg-success/20 text-success
+           border border-success/30;
+  }
+  
+  .badge-warning {
+    @apply badge bg-warning/20 text-warning
+           border border-warning/30;
+  }
+  
+  .badge-error {
+    @apply badge bg-error/20 text-error
+           border border-error/30;
+  }
+}
+
+/* Прогресс-бары */
+@layer components {
+  .progress-bar {
+    @apply w-full h-2 bg-dark-800 rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-accent-600 to-accent-500
+           rounded-full transition-all duration-500 ease-smooth;
+  }
+  
+  .progress-fill-glow {
+    @apply progress-fill shadow-glow;
+  }
+}
+
+/* Разделители */
+@layer components {
+  .divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-dark-700 to-transparent;
+  }
+  
+  .divider-vertical {
+    @apply h-full w-px bg-gradient-to-b from-transparent via-dark-700 to-transparent;
+  }
+  
+  .divider-glow {
+    @apply divider via-accent-800/50;
+  }
+}
